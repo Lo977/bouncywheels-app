@@ -1,13 +1,126 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  background-color: rgb(36, 79, 86);
+}
+.main-title h3 {
+  color: rgb(107, 255, 8);
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: -10px;
+  /* margin-stop: 20px; */
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+
+  margin-top: 0px;
+}
+.main-title {
+  background-color: rgb(20, 21, 20);
+  padding-bottom: 20px;
+  height: fit-content;
+}
+.home-main {
+  color: antiquewhite;
+  text-align: center;
+}
+.home-main {
+  font-size: 30px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.about {
+  color: antiquewhite;
+  text-align: center;
+  font-size: 30px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.main-contact {
+  text-align: center;
+  color: antiquewhite;
+  font-size: 30px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.card {
+  /* display: block; */
+  margin: 1rem;
+  box-shadow: 2px 2px 7px 0 #83f71d;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 300px;
+  background-color: rgb(70, 71, 69);
+}
+
+.card .image {
+  height: 225px;
+  position: relative;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.card .image .price {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.5rem;
+  /* border-right: 1px solid #ccc; */
+  /* border-bottom: 1px solid #ccc; */
+  border-bottom-right-radius: 5px;
+  background: rgb(129, 72, 2);
+  color: beige;
+}
+
+.card .image img {
+  max-width: 300px;
+  max-height: auto;
+  width: auto;
+  height: auto;
+}
+
+.card .details {
+  padding: 0.5rem;
+  color: aliceblue;
+}
+
+.card .details strong {
+  font-family: serif;
+  font-size: 1rem;
+}
+.cards {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: black;
+}
+.new-car {
+  padding: 5px;
+  margin-bottom: -10px;
+  margin-left: 90%;
+  color: rgb(1, 100, 6);
+  font-weight: bold;
+  font-size: 01rem;
+  background-color: #ccc;
+  border-style: none;
+  justify-content: end;
+}
+.new-car:hover {
+  background-color: #ebcccc;
+}
+.new-car-form {
+  color: azure;
+  width: 100px;
+  display: inline-block;
+  padding: 5px;
+  margin: 30px;
+  font-weight: bold;
+  margin-left: 35%;
+}
+.new-car-form input {
+  margin: 15px;
+  width: 25rem;
+  /* margin-bottom: 40px; */
+}
+.preview {
+  color: chocolate;
+  margin-top: 40px;
 }

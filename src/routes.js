@@ -1,6 +1,6 @@
 import React from "react";
 import ErrorPage from "./pages/ErrorPage";
-import App from "./pages/App";
+import App from "./components/App";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
@@ -40,10 +40,6 @@ const routes = [
         path: "update-car/:id",
         element: <UpdateCar />,
       },
-      // {
-      //   path: "search",
-      //   element: <Search />,
-      // },
     ],
   },
 ];

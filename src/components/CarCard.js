@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { useNavigate, useOutletContext } from "react-router-dom";
 
 function CarCard({ car }) {
-  const [isAvailable, setIsAvailable] = useState(false);
+  const [isAvailable, setIsAvailable] = useState(true);
   const { id, image, make, model, year, price } = car;
   const navigate = useNavigate();
   const { handleCarDelete } = useOutletContext();
-
+  const priceToDecimals = parseInt(price).toFixed(2);
+  console.log(priceToDecimals);
   function handleDelete() {
     fetch(`http://localhost:3000/cars/${id}`, {
       method: "DELETE",
@@ -28,7 +29,11 @@ function CarCard({ car }) {
         <img src={image} alt={make} />
       </div>
       <p style={{ color: "white" }}>
-        Price : <strong style={{ color: "lightgreen" }}> $ {price}</strong>
+        Price :{" "}
+        <strong style={{ color: "tomato", backgroundColor: "black" }}>
+          {" "}
+          ${priceToDecimals}
+        </strong>
       </p>
       <div className="details">
         <button onClick={handleNavigate}>Edit</button>

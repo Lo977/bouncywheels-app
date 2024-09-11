@@ -11,8 +11,10 @@ function NewCar() {
     isAvailable: true,
   });
   const navigate = useNavigate();
-  const handleNewCar = useOutletContext();
-  //   console.log(handleNewCar);
+  const { handleNewCar } = useOutletContext();
+
+  // console.log(handleNewCar);
+
   function handleOnChange(e) {
     const key = e.target.name;
     SetNewCarData({ ...newCarData, [key]: e.target.value });
@@ -25,8 +27,11 @@ function NewCar() {
       headers: { "Content-Type": "Application/JSON" },
       body: JSON.stringify(newCarData),
     })
-      // .then((res) => res.json())
-      .then(() => navigate("/cars"));
+      .then((res) => res.json())
+      .then((newCar) => {
+        handleNewCar(newCar);
+        navigate("/cars");
+      });
   }
   return (
     <div className="new-car-form">

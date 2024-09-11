@@ -279,6 +279,15 @@
       "year": 2022,
       "image": "https://news.dupontregistry.com/wp-content/uploads/2019/04/ferrari-f12tdf-massa-1-800x534.jpg",
       "price": "2000000000"
+    },
+    {
+      "id": "a14c",
+      "make": "B",
+      "model": "Chironnnnnnnn",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeglG5QaXVvuBXHdqm5Fx7lJmzIF4XUXISDA&s",
+      "year": "2025",
+      "price": "054262",
+      "isAvailable": true
     }
   ]
 }

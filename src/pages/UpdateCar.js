@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useOutletContext } from "react-router-dom";
 
 function UpdateCar() {
   const { state } = useLocation();
   const navigate = useNavigate();
+  const { handleUpdate } = useOutletContext();
   const { id, image, make, model, year, price } = state;
 
   const [formData, setFormData] = useState({
@@ -20,20 +21,17 @@ function UpdateCar() {
   }
   function handleSubmit(e) {
     e.preventDefault();
-    // console.log("submited");
+
     fetch(`http://localhost:3000/cars/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "Application/JSON" },
       body: JSON.stringify(formData),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
-    //     return console.log(data);
+      .then((carData) => handleUpdate(carData));
     navigate("/cars");
-    //   });
   }
 
-  //   console.logs(make);
   const imagePreview = formData.image !== "" ? formData.image : image;
   return (
     <div className="new-car-form">

@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 
-function CarCard({ car, onDelete }) {
+function CarCard({ car }) {
   const [isAvailable, setIsAvailable] = useState(false);
   const { id, image, make, model, year, price } = car;
   const navigate = useNavigate();
+  const { handleCarDelete } = useOutletContext();
 
   function handleDelete() {
     fetch(`http://localhost:3000/cars/${id}`, {
       method: "DELETE",
-    }).then(() => onDelete(car));
-    // .then(() => navigate(`/cars/${id}`, { state: car }));
+    }).then(() => handleCarDelete(car));
   }
   function handleNavigate() {
     navigate(`/update-car/${id}`, { state: car });
@@ -31,8 +31,7 @@ function CarCard({ car, onDelete }) {
         Price : <strong style={{ color: "lightgreen" }}> $ {price}</strong>
       </p>
       <div className="details">
-        {/* <Link to={(`/update-car/${id}`, { state: car })}> */}
-        <button onClick={handleNavigate}>Edit</button> {/* </Link> */}
+        <button onClick={handleNavigate}>Edit</button>
         <button className="emoji-button delete" onClick={handleDelete}>
           Delete
         </button>

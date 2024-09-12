@@ -3,7 +3,7 @@
     {
       "id": "1",
       "make": "Bugatti",
-      "model": "Divo",
+      "model": "Divo0000",
       "year": 2020,
       "image": "https://hips.hearstapps.com/hmg-prod/images/14bugatti-divo-99leadgallery-1535035005.jpg?crop=0.824xw:1.00xh;0.109xw,0&resize=768:*",
       "price": 124124400
@@ -286,7 +286,7 @@
       "model": "Chironnnnnnnn",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeglG5QaXVvuBXHdqm5Fx7lJmzIF4XUXISDA&s",
       "year": "2025",
-      "price": "054262",
+      "price": "0542",
       "isAvailable": true
     }
   ]

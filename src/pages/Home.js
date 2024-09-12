@@ -3,7 +3,6 @@ import React from "react";
 function Home() {
   return (
     <div className="home-main">
-      {/* <h1>Home Comp</h1> */}
       <main>
         <h3 className="home-title">Welcome to Bouncy Wheels Inventory App</h3>
         <img
@@ -15,8 +14,8 @@ function Home() {
           Bouncy Wheels Exotic Cars Inventory App is designed to stramline your
           inventory process as ultimate tool for managing luxury car records
           effortlessly to add new cars, delete sold cars from the inventory list
-          and update an information in seconds.this app was crated for Flatiron
-          school SE phase-2 project{" "}
+          and update an information in seconds.this app was created for Flatiron
+          school SE phase-2 project .
         </p>
       </main>
     </div>

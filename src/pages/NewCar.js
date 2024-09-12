@@ -2,24 +2,21 @@ import React, { useState } from "react";
 import { useNavigate, useOutletContext } from "react-router-dom";
 
 function NewCar() {
-  const [newCarData, SetNewCarData] = useState({
+  const [newCarData, setNewCarData] = useState({
     make: "",
     model: "",
     image: "",
     year: "",
     price: 0,
-    isAvailable: true,
   });
   const navigate = useNavigate();
   const { handleNewCar } = useOutletContext();
 
-  // console.log(handleNewCar);
-
   function handleOnChange(e) {
     const key = e.target.name;
-    SetNewCarData({ ...newCarData, [key]: e.target.value });
+    setNewCarData({ ...newCarData, [key]: e.target.value });
   }
-  //   console.log(newCarData);
+
   function handleSubmit(e) {
     e.preventDefault();
     fetch("http://localhost:3000/cars", {
@@ -80,7 +77,7 @@ function NewCar() {
           </button>
         </form>
       </div>
-      {/* {/* <Outlet /> */}
+
       <div className="preview">
         <img src={newCarData.image} />
         <h4>Make :{newCarData.make}</h4>

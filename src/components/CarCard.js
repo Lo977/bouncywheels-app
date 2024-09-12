@@ -6,15 +6,17 @@ function CarCard({ car }) {
   const { id, image, make, model, year, price } = car;
   const navigate = useNavigate();
   const { handleCarDelete } = useOutletContext();
-  const priceToDecimals = parseInt(price).toFixed(2);
-  console.log(priceToDecimals);
+  const priceToDecimals = parseInt(price)
+    .toFixed(2)
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
   function handleDelete() {
     fetch(`http://localhost:3000/cars/${id}`, {
       method: "DELETE",
     }).then(() => handleCarDelete(car));
   }
   function handleNavigate() {
-    navigate(`/update-car/${id}`, { state: car });
+    navigate(`/cars/update-car/${id}`, { state: car });
   }
   return (
     <li className="card">
@@ -30,7 +32,9 @@ function CarCard({ car }) {
       </div>
       <p style={{ color: "white" }}>
         Price :{" "}
-        <strong style={{ color: "tomato", backgroundColor: "black" }}>
+        <strong
+          style={{ color: "white", backgroundColor: "black", padding: "5px" }}
+        >
           {" "}
           ${priceToDecimals}
         </strong>
@@ -47,7 +51,6 @@ function CarCard({ car }) {
           {isAvailable ? "Available" : "Sold"}
         </button>
       </div>
-      {/* <Outlet /> */}
     </li>
   );
 }

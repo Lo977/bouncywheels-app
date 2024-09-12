@@ -9,7 +9,7 @@ function App() {
       .then((res) => res.json())
       .then((carsData) => setCars(carsData));
   }, []);
-  // console.log(cars);
+
   function handleCarDelete(carData) {
     const deletedCar = cars.filter((car) => car.id !== carData.id);
     setCars(deletedCar);
@@ -21,6 +21,7 @@ function App() {
     const updatedCar = cars.map((car) =>
       car.id === carData.id ? carData : car
     );
+    console.log(carData);
     setCars(updatedCar);
   }
   return (

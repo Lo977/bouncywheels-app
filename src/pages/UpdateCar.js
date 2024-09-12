@@ -1,19 +1,25 @@
 import React, { useState } from "react";
-import { useLocation, useNavigate, useOutletContext } from "react-router-dom";
+import {
+  useLocation,
+  useNavigate,
+  useOutletContext,
+  useParams,
+} from "react-router-dom";
 
 function UpdateCar() {
-  const { state } = useLocation();
+  const [formData, setFormData] = useState({
+    make: "",
+    model: "",
+    image: "",
+    year: "",
+    price: 0,
+  });
+  //   const { state } = useLocation();
   const navigate = useNavigate();
   const { handleUpdate } = useOutletContext();
-  const { id, image, make, model, year, price } = state;
-
-  const [formData, setFormData] = useState({
-    make: make,
-    model: model,
-    image: image,
-    year: year,
-    price: price,
-  });
+  //   const { id, image, make, model, year, price } = state;
+  const carId = useParams();
+  //   console.log(carId);
 
   function handleOnchange(e) {
     const key = e.target.name;
@@ -21,8 +27,7 @@ function UpdateCar() {
   }
   function handleSubmit(e) {
     e.preventDefault();
-
-    fetch(`http://localhost:3000/cars/${id}`, {
+    fetch(`http://localhost:3000/cars/${carId.id}`, {
       method: "PATCH",
       headers: { "Content-Type": "Application/JSON" },
       body: JSON.stringify(formData),
@@ -32,10 +37,10 @@ function UpdateCar() {
     navigate("/cars");
   }
 
-  const imagePreview = formData.image !== "" ? formData.image : image;
+  //   const imagePreview = formData.image !== "" ? formData.image : image;
   return (
     <div className="new-car-form">
-      <img style={{ width: "300px" }} src={imagePreview} alt={make} />
+      {/* <img style={{ width: "300px" }} src={imagePreview} alt={make} /> */}
       <div>
         <form onSubmit={handleSubmit}>
           Make

@@ -282,12 +282,11 @@
     },
     {
       "id": "a14c",
-      "make": "B",
-      "model": "Chironnnnnnnn",
+      "make": "Bugatti",
+      "model": "Divooo",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeglG5QaXVvuBXHdqm5Fx7lJmzIF4XUXISDA&s",
       "year": "2025",
-      "price": "0542",
-      "isAvailable": true
+      "price": 0
     }
   ]
 }

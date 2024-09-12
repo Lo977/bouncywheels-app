@@ -37,7 +37,7 @@ const routes = [
         element: <NewCar />,
       },
       {
-        path: "cars/update-car/:id",
+        path: "/update-car/:id",
         element: <UpdateCar />,
       },
     ],

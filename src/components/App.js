@@ -21,7 +21,7 @@ function App() {
     const updatedCar = cars.map((car) =>
       car.id === carData.id ? carData : car
     );
-    console.log(carData);
+    // console.log(carData);
     setCars(updatedCar);
   }
   return (

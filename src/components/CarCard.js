@@ -16,7 +16,7 @@ function CarCard({ car }) {
     }).then(() => handleCarDelete(car));
   }
   function handleNavigate() {
-    navigate(`/cars/update-car/${id}`, { state: car });
+    navigate(`/update-car/${id}`, { state: car });
   }
   return (
     <li className="card">
